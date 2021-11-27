@@ -15,7 +15,56 @@
   </head>
   <div class="container">
   <body>
-    <h1>Vanilla Test</h1>
+    <div class="container" id="weather-app">
+      <h1>Is It A Beautiful Day For A Walk?*</h1>
+      <h3 id="today-date"></h3>
+      <h3 id="today-time"></h3>
+      <form id="search-form">
+        <div class="mb-3">
+          <input
+            type="text"
+            class="form-control"
+            id="city-search"
+            aria-describedby="emailHelp"
+            placeholder="Where Will You Be Walking?"
+          />
+        </div>
+        <button type="submit" class="btn btn-primary">🔍</button>
+      </form>
+    <br />
+      <button id="current-city">Current City</button>
+      <h3 id="city-name"></h3>
+      <div class="card" style="width: 8rem">
+        <img src="images/sunnyday.jpeg" class="card-img-top" alt="..." />
+        <div class="card-body">
+          <p class="card-text" id="temperature">  </p><p>
+            <a href="#" id="fahrenheit-link">°F</a> | <a href="#" id="celsius-link">°C</a>      
+          </p>
+        </div>
+      </div>
+      <br />
+      <br />
+      <div class="row">
+        <div class="col-2"><h4>Mon</h4></div>
+        <div class="col-2"><h4>Tues</h4></div>
+        <div class="col-2"><h4>Wed</h4></div>
+        <div class="col-2"><h4>Thurs</h4></div>
+        <div class="col-2"><h4>Fri</h4></div>
+      </div>
+      <div class="row">
+        
+          <div class="col-2"><h5>🌧 61°F</h5></div>
+          <div class="col-2"><h5>☀️ 70°F</h5></div>
+          <div class="col-2"><h5>☀️ 81°F</h5></div>
+          <div class="col-2"><h5>☀️ 84°F</h5></div>
+          <div class="col-2"><h5>☀️ 82°F</h5></div>
+        </div>
+      </div>
+
+      <footer>*Walk when you feel like it!</footer>
+
+      <footer><a id="coded-by" href="https://github.com/ladyhobbit13/Walking-Weather">Open-source code</a>, by Claire Fleischer</footer>
+      
     </div>
     <script src="src/index.js"></script>
   </body>
