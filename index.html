@@ -20,8 +20,7 @@
      <h1>Is It A Beautiful Day For A Walk?<em class="asterisk">*</em></h1>
       <h3 id="today-date"></h3>
       <h3 id="today-time"></h3>
-      <form id="search-form">
-        <div class="mb-3">
+      <form id="search-form" class="mb-3">
           <input
             type="text"
             class="form-control"
@@ -29,17 +28,21 @@
             aria-describedby="emailHelp"
             placeholder="Where Will You Be Walking?"
           />
-        
-        <button type="submit" class="btn btn-primary" id="search-button">👟👟</button></div>
+        <button type="submit" class="btn btn-primary" id="search-button">👟👟</button>
       </form>
-    <br />
       <button id="current-city">Current City</button>
       <h3 id="city-name"></h3>
-      <div class="card" style="width: 8rem">
-        <img src="images/sunnyday.jpeg" class="card-img-top" alt="..." />
+      <div class="card" style="width: 16rem">
+    
         <div class="card-body">
-          <p class="card-text" id="temperature">  </p><p>
-            <a href="#" id="fahrenheit-link">°F</a> | <a href="#" id="celsius-link">°C</a> 
+          <img src="" alt="" id="icon" />
+          <p class="card-text"> 
+            <ul>
+              <li>Tempterature: <span id="temperature"></span> <a href="#" id="fahrenheit-link">°F</a> | <a href="#" id="celsius-link">°C</a></li>
+              <li>Humidity: <span id="humidity"></span> %</li>
+              <li>Wind Speed: <span id="wind"></span> mph</li>
+            </ul> 
+            
                   
           </p>
         </div>
