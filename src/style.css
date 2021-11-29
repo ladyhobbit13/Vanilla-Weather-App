@@ -66,3 +66,12 @@ footer {
 li {
   list-style: none;
 }
+
+.active {
+  color: black;
+  cursor: default;
+  text-decoration: none;
+}
+.active:hover {
+  text-decoration: none;
+}

@@ -1,13 +1,13 @@
 // date
 let now = new Date();
 let days = [
+  "Sunday",
   "Monday",
   "Tuesday",
   "Wednesday",
   "Thursday",
   "Friday",
   "Saturday",
-  "Sunday",
 ];
 let months = [
   "January",
@@ -83,11 +83,15 @@ button.addEventListener("click", getCurrentPosition);
 
 function celsius(event) {
   event.preventDefault();
+  fahrenheitTemp.classList.remove("active");
+  celsiusTemp.classList.add("active");
   let celsiusCity = ((fahrenheitCity - 32) * 5) / 9;
   temperature.innerHTML = `Temperature: ${Math.round(celsiusCity)}`;
 }
 function fahrenheit(event) {
   event.preventDefault();
+  celsiusTemp.classList.remove("active");
+  fahrenheitTemp.classList.add("active");
   temperature.innerHTML = `Temperature: ${Math.round(fahrenheitCity)}`;
 }
 
