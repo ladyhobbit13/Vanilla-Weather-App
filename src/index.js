@@ -73,11 +73,13 @@ function showWeather(response) {
   currentCity.innerHTML = `${response.data.name}`;
   let nowTemp = Math.round(response.data.main.temp);
   let currentTemp = document.querySelector("#temperature");
-  currentTemp.innerHTML = `${nowTemp}`;
+  currentTemp.innerHTML = `Temperature: ${nowTemp}`;
   let cityHumidity = document.querySelector("#humidity");
-  cityHumidity.innerHTML = response.data.main.humidity;
+  cityHumidity.innerHTML = `Humidity: ${response.data.main.humidity}%`;
   let cityWindSpeed = document.querySelector("#wind");
-  cityWindSpeed.innerHTML = Math.round(response.data.wind.speed);
+  cityWindSpeed.innerHTML = `Wind Speed: ${Math.round(
+    response.data.wind.speed
+  )} mph`;
   let weatherIcon = document.querySelector("#icon");
   weatherIcon.setAttribute(
     "src",
