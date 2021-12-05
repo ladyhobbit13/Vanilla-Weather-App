@@ -34,9 +34,7 @@ h3 {
   display: block;
   margin: 0 auto;
 }
-.col-2 {
-  text-align: right;
-}
+
 footer {
   text-align: center;
   padding: 50px;
@@ -74,4 +72,18 @@ li {
 }
 .active:hover {
   text-decoration: none;
+}
+
+.weather-forecast {
+  margin-top: 20px;
+  text-align: center;
+}
+.weather-forecast-date {
+  font-size: 16px;
+}
+.weather-forecast-temperature-max {
+  font-size: 13px;
+}
+.weather-forecast-temperature-min {
+  font-size: 13px;
 }
