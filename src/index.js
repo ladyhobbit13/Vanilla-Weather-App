@@ -42,6 +42,29 @@ today.innerHTML = `${formattedDate}`;
 let time = document.querySelector("#today-time");
 time.innerHTML = `${currentTime}`;
 
+// forecast
+
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let forecastHTML = `<div class="row">`;
+  let days = ["Thurs", "Fri", "Sat"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+    <div class="col-2">
+      <div class="weather-forecast-date">${day}</div>
+      <img src="images/sunnyday.jpeg" alt="" width="80" />
+      <div class="weather-forecast-temperature">
+        <span class="weather-forecast-temperature-max">18°</span>
+        <span class="weather-forecast-temperature-min">12°</span>
+      </div>
+    </div>`;
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 // current location
 
 function showPosition(position) {
@@ -102,6 +125,7 @@ fahrenheitTemp.addEventListener("click", fahrenheit);
 let temperature = document.querySelector("#temperature");
 
 let fahrenheitCity = null;
+displayForecast();
 
 // search engine
 
