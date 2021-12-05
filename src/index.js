@@ -44,10 +44,11 @@ time.innerHTML = `${currentTime}`;
 
 // forecast
 
-function displayForecast() {
+function displayForecast(response) {
+  console.log(response.data.daily);
   let forecastElement = document.querySelector("#forecast");
-  let forecastHTML = `<div class="row">`;
   let days = ["Thurs", "Fri", "Sat"];
+  let forecastHTML = `<div class="row">`;
   days.forEach(function (day) {
     forecastHTML =
       forecastHTML +
@@ -74,6 +75,11 @@ function showPosition(position) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&units=imperial&appid=${apiKey}`;
   axios.get(apiUrl).then(showWeather);
 }
+function getForecast(coordinates) {
+  let apiKey = "1311cf318d3edfa90a5746a7bee262dc";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=imperial`;
+  axios.get(apiUrl).then(displayForecast);
+}
 function showWeather(response) {
   let currentCity = document.querySelector("#city-name");
   currentCity.innerHTML = `${response.data.name}`;
@@ -93,6 +99,7 @@ function showWeather(response) {
   );
   weatherIcon.setAttribute("alt", response.data.weather[0].description);
   fahrenheitCity = response.data.main.temp;
+  getForecast(response.data.coord);
 }
 function getCurrentPosition() {
   navigator.geolocation.getCurrentPosition(showPosition);
@@ -125,7 +132,6 @@ fahrenheitTemp.addEventListener("click", fahrenheit);
 let temperature = document.querySelector("#temperature");
 
 let fahrenheitCity = null;
-displayForecast();
 
 // search engine
 
